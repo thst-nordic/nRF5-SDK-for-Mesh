@@ -1,5 +1,52 @@
 # Release Notes
 
+## BLE Mesh v1.0.0
+
+This is the first production release of Nordic's nRF5 SDK for Mesh. This release implements mandatory features for the Mesh Profile 1.0 specification and also some proprietary features (PB-remote and Nordic Advertiser Extensions) in experimental state.
+
+### New features
+- Key refresh has been implemented
+- Heartbeat support has been added
+- DFU bootloader source code added
+- Support for nRF52840_xxAA
+- Proprietary Nordic Advertiser Extensions ("InstaBurst!") feature for improved throughput
+- AD-listener module for simplified subscription to advertisement data
+- IRQ levels are now aligned with the nRF5 SDK
+    - All API-functions are expected to be called from `NRF_MESH_IRQ_PRIORITY_LOWEST`
+- Node de-provisioning supported through the Config Server Node Reset message
+
+### Bugfixes
+- Fixed beacon advertiser not enabled in example
+- Fixed trailing garbage data in Composition Data
+- Build fails if the path to the repo has spaces
+- Fixed issue where the serial interface gets corrupted memory or hangs on an incoming serial packet that is too long
+- Fixed issue where the Config Server used the application key index and not the DSM handle when deleting key
+- Removed duplication of Company ID
+- Fixed assertion on invalid length for unprovisioned beacons
+- Removed warnings and errors from documentation build
+
+### Other
+- Provisioning API changed slightly to de-couple the upper and lower layers more cleanly
+
+### Known limitations
+- Optional features of the Mesh Profile 1.0 Specification are not part of this release.
+
+### Test Errata
+- DFU : replacing Softdevice live while running app is not tested.
+
+
+
+
+## BLE Mesh v0.10.1-Alpha
+
+This is a hotfix release with no new features.
+
+### Bugfixes
+
+- Segger Embedded Studio Projects have devkit BOARD defines now instead of dongles.
+- Standard BLE Access Address now used for all binary artifacts (.hex/.lib)
+
+
 ## BLE Mesh v0.10.0-Alpha
 
 This is a minor feature release for the experimental nRF5 SDK for Mesh
