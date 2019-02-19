@@ -1,0 +1,7 @@
+set(bl652_DEFINES
+    -DBOARD_BL652
+    -DBOARD_CUSTOM
+    -DCONFIG_GPIO_AS_PINRESET)
+
+set(bl652_INCLUDE_DIRS
+    "${SDK_ROOT}/components/boards")
